@@ -39,7 +39,7 @@ namespace DSED06_WebApp.Controllers
         // GET: AQUATIC_PET/Create
         public ActionResult Create()
         {
-            ViewBag.GROUP_FK = new SelectList(db.AQUATIC_GROUP, "ID_PK", "NAME");
+            ViewBag.GROUP_FK = new SelectList(db.AQUATIC_GROUP, "ID_PK", "NAME").OrderBy(x=>x.Text);
             return View();
         }
 
@@ -58,6 +58,7 @@ namespace DSED06_WebApp.Controllers
             }
 
             ViewBag.GROUP_FK = new SelectList(db.AQUATIC_GROUP, "ID_PK", "NAME", aQUATIC_PET.GROUP_FK);
+            
             return View(aQUATIC_PET);
         }
 
@@ -73,7 +74,8 @@ namespace DSED06_WebApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.GROUP_FK = new SelectList(db.AQUATIC_GROUP, "ID_PK", "NAME", aQUATIC_PET.GROUP_FK);
+            ViewBag.GROUP_FK = new SelectList(db.AQUATIC_GROUP.OrderBy(x => x.NAME), "ID_PK", "NAME", aQUATIC_PET.GROUP_FK);
+            
             return View(aQUATIC_PET);
         }
 

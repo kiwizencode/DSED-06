@@ -13,7 +13,7 @@
     </Key>
     <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GROUP_FK" Type="int" Nullable="false" />
-    <Property Name="COMMON" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="COMMON" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="SCIENTIFIC" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_AQUATIC_PET_AQUATIC_GROUP">

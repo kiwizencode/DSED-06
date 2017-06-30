@@ -4,14 +4,16 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Pet Information Details</h2>
 
 <div>
-    <h4>AQUATIC_PET</h4>
+    <!-- <h4>AQUATIC_PET</h4>   -->
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.COMMON)
+            @* @Html.DisplayNameFor(model => model.COMMON)  *@
+            Common Name :
         </dt>
 
         <dd>
@@ -19,7 +21,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SCIENTIFIC)
+            @* @Html.DisplayNameFor(model => model.SCIENTIFIC)  *@
+            Scientific Name :
         </dt>
 
         <dd>
@@ -27,7 +30,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AQUATIC_GROUP.NAME)
+            @* @Html.DisplayNameFor(model => model.AQUATIC_GROUP.NAME)  *@
+            Group :
         </dt>
 
         <dd>
@@ -37,6 +41,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PK }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit Pet Infromation", "Edit", new { id = Model.ID_PK }) |
+    @Html.ActionLink("Back to Pet Information Maintenance Page", "Index")
 </p>

@@ -21,7 +21,7 @@
       <PropertyRef Name="ID_PK" />
     </Key>
     <Property Name="ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="COMMON" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="COMMON" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="SCIENTIFIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GROUP_FK" Type="Int32" Nullable="false" />
     <NavigationProperty Name="AQUATIC_GROUP" Relationship="DESD06_AQUASHOPModel.FK_AQUATIC_PET_AQUATIC_GROUP" FromRole="AQUATIC_PET" ToRole="AQUATIC_GROUP" />
