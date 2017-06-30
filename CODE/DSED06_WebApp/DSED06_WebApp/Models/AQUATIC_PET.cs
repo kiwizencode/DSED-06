@@ -17,5 +17,8 @@ namespace DSED06_WebApp.Models
         public int ID_PK { get; set; }
         public string COMMON { get; set; }
         public string SCIENTIFIC { get; set; }
+        public int GROUP_FK { get; set; }
+    
+        public virtual AQUATIC_GROUP AQUATIC_GROUP { get; set; }
     }
 }

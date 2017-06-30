@@ -12,11 +12,28 @@
       <PropertyRef Name="ID_PK" />
     </Key>
     <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GROUP_FK" Type="int" Nullable="false" />
     <Property Name="COMMON" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="SCIENTIFIC" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_AQUATIC_PET_AQUATIC_GROUP">
+    <End Role="AQUATIC_GROUP" Type="Self.AQUATIC_GROUP" Multiplicity="1" />
+    <End Role="AQUATIC_PET" Type="Self.AQUATIC_PET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AQUATIC_GROUP">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="AQUATIC_PET">
+        <PropertyRef Name="GROUP_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DESD06_AQUASHOPModelStoreContainer">
     <EntitySet Name="AQUATIC_GROUP" EntityType="Self.AQUATIC_GROUP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AQUATIC_PET" EntityType="Self.AQUATIC_PET" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AQUATIC_PET_AQUATIC_GROUP" Association="Self.FK_AQUATIC_PET_AQUATIC_GROUP">
+      <End Role="AQUATIC_GROUP" EntitySet="AQUATIC_GROUP" />
+      <End Role="AQUATIC_PET" EntitySet="AQUATIC_PET" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>
