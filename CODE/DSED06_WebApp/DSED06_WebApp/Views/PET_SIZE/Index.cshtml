@@ -18,7 +18,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model.OrderByDescending(x => x.DESCRIPTION)) {
+@foreach (var item in Model.OrderBy(x => x.DESCRIPTION, 
+                                    new DSED06_WebApp.Code_Common.SemiNumericComparer())) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.DESCRIPTION)

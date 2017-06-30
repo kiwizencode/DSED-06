@@ -149,9 +149,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Code_Common\SemiNumericComparer.cs" />
     <Compile Include="Controllers\AQUATIC_GROUPController.cs" />
     <Compile Include="Controllers\AQUATIC_PETController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PET_RECORDController.cs" />
     <Compile Include="Controllers\PET_SIZEController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,6 +256,11 @@
     <Content Include="Views\PET_SIZE\Details.cshtml" />
     <Content Include="Views\PET_SIZE\Edit.cshtml" />
     <Content Include="Views\PET_SIZE\Index.cshtml" />
+    <Content Include="Views\PET_RECORD\Create.cshtml" />
+    <Content Include="Views\PET_RECORD\Delete.cshtml" />
+    <Content Include="Views\PET_RECORD\Details.cshtml" />
+    <Content Include="Views\PET_RECORD\Edit.cshtml" />
+    <Content Include="Views\PET_RECORD\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
