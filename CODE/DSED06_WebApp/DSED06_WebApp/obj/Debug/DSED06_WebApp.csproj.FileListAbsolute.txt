@@ -29,6 +29,8 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_Web
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\DSED06_WebApp.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\DSED06_WebApp.pdb
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\Antlr3.Runtime.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.SqlServer.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -47,6 +49,8 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_Web
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\System.Web.WebPages.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\System.Web.WebPages.Razor.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\WebGrease.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.xml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.SqlServer.xml
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\System.Web.Helpers.xml
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\System.Web.Mvc.xml
@@ -64,7 +68,4 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_Web
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\Microsoft.AI.Web.xml
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\obj\Debug\DSED06_WebApp.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\obj\Debug\DSED06_WebApp.pdb
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.dll
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.SqlServer.dll
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.xml
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\obj\Debug\DSED06_WebApp.csprojResolveAssemblyReference.cache

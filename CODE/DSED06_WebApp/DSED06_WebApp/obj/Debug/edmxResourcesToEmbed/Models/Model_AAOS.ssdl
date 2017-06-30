@@ -7,7 +7,16 @@
     <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NAME" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
+  <EntityType Name="AQUATIC_PET">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMMON" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SCIENTIFIC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityContainer Name="DESD06_AQUASHOPModelStoreContainer">
     <EntitySet Name="AQUATIC_GROUP" EntityType="Self.AQUATIC_GROUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AQUATIC_PET" EntityType="Self.AQUATIC_PET" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

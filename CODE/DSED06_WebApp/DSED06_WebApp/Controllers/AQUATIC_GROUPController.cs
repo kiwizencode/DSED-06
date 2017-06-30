@@ -14,8 +14,6 @@ namespace DSED06_WebApp.Controllers
     {
         private DESD06_AQUASHOPEntities db = new DESD06_AQUASHOPEntities();
 
-        private string Title = "Pet Group";
-
         // GET: AQUATIC_GROUP
         public ActionResult Index()
         {

@@ -9,5 +9,14 @@
   </EntityType>
   <EntityContainer Name="DESD06_AQUASHOPEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AQUATIC_GROUP" EntityType="Self.AQUATIC_GROUP" />
+    <EntitySet Name="AQUATIC_PET" EntityType="DESD06_AQUASHOPModel.AQUATIC_PET" />
   </EntityContainer>
+  <EntityType Name="AQUATIC_PET">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMMON" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SCIENTIFIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

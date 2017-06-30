@@ -26,5 +26,6 @@ namespace DSED06_WebApp.Models
         }
     
         public virtual DbSet<AQUATIC_GROUP> AQUATIC_GROUP { get; set; }
+        public virtual DbSet<AQUATIC_PET> AQUATIC_PET { get; set; }
     }
 }
