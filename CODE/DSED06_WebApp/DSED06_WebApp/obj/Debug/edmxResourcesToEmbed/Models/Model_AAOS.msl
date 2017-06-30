@@ -19,5 +19,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PET_RECORD">
+      <EntityTypeMapping TypeName="DESD06_AQUASHOPModel.PET_RECORD">
+        <MappingFragment StoreEntitySet="PET_RECORD">
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="SIZE_FK" ColumnName="SIZE_FK" />
+          <ScalarProperty Name="PET_FK" ColumnName="PET_FK" />
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PET_SIZE">
+      <EntityTypeMapping TypeName="DESD06_AQUASHOPModel.PET_SIZE">
+        <MappingFragment StoreEntitySet="PET_SIZE">
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

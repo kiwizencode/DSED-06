@@ -16,6 +16,22 @@
     <Property Name="COMMON" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="SCIENTIFIC" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="PET_RECORD">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PET_FK" Type="int" Nullable="false" />
+    <Property Name="SIZE_FK" Type="int" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PET_SIZE">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
   <Association Name="FK_AQUATIC_PET_AQUATIC_GROUP">
     <End Role="AQUATIC_GROUP" Type="Self.AQUATIC_GROUP" Multiplicity="1" />
     <End Role="AQUATIC_PET" Type="Self.AQUATIC_PET" Multiplicity="*" />
@@ -28,12 +44,46 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PET_RECORD_AQUATIC_PET">
+    <End Role="AQUATIC_PET" Type="Self.AQUATIC_PET" Multiplicity="1" />
+    <End Role="PET_RECORD" Type="Self.PET_RECORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AQUATIC_PET">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="PET_RECORD">
+        <PropertyRef Name="PET_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PET_RECORD_PET_SIZE">
+    <End Role="PET_SIZE" Type="Self.PET_SIZE" Multiplicity="0..1" />
+    <End Role="PET_RECORD" Type="Self.PET_RECORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PET_SIZE">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="PET_RECORD">
+        <PropertyRef Name="SIZE_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DESD06_AQUASHOPModelStoreContainer">
     <EntitySet Name="AQUATIC_GROUP" EntityType="Self.AQUATIC_GROUP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AQUATIC_PET" EntityType="Self.AQUATIC_PET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PET_RECORD" EntityType="Self.PET_RECORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PET_SIZE" EntityType="Self.PET_SIZE" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_AQUATIC_PET_AQUATIC_GROUP" Association="Self.FK_AQUATIC_PET_AQUATIC_GROUP">
       <End Role="AQUATIC_GROUP" EntitySet="AQUATIC_GROUP" />
       <End Role="AQUATIC_PET" EntitySet="AQUATIC_PET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PET_RECORD_AQUATIC_PET" Association="Self.FK_PET_RECORD_AQUATIC_PET">
+      <End Role="AQUATIC_PET" EntitySet="AQUATIC_PET" />
+      <End Role="PET_RECORD" EntitySet="PET_RECORD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PET_RECORD_PET_SIZE" Association="Self.FK_PET_RECORD_PET_SIZE">
+      <End Role="PET_SIZE" EntitySet="PET_SIZE" />
+      <End Role="PET_RECORD" EntitySet="PET_RECORD" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

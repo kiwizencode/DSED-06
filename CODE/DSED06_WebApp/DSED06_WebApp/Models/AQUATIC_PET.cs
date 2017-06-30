@@ -14,11 +14,19 @@ namespace DSED06_WebApp.Models
     
     public partial class AQUATIC_PET
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AQUATIC_PET()
+        {
+            this.PET_RECORD = new HashSet<PET_RECORD>();
+        }
+    
         public int ID_PK { get; set; }
         public string COMMON { get; set; }
         public string SCIENTIFIC { get; set; }
         public int GROUP_FK { get; set; }
     
         public virtual AQUATIC_GROUP AQUATIC_GROUP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PET_RECORD> PET_RECORD { get; set; }
     }
 }

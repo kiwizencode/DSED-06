@@ -15,6 +15,16 @@
       <End Role="AQUATIC_GROUP" EntitySet="AQUATIC_GROUP" />
       <End Role="AQUATIC_PET" EntitySet="AQUATIC_PET" />
     </AssociationSet>
+    <EntitySet Name="PET_RECORD" EntityType="DESD06_AQUASHOPModel.PET_RECORD" />
+    <EntitySet Name="PET_SIZE" EntityType="DESD06_AQUASHOPModel.PET_SIZE" />
+    <AssociationSet Name="FK_PET_RECORD_AQUATIC_PET" Association="DESD06_AQUASHOPModel.FK_PET_RECORD_AQUATIC_PET">
+      <End Role="AQUATIC_PET" EntitySet="AQUATIC_PET" />
+      <End Role="PET_RECORD" EntitySet="PET_RECORD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PET_RECORD_PET_SIZE" Association="DESD06_AQUASHOPModel.FK_PET_RECORD_PET_SIZE">
+      <End Role="PET_SIZE" EntitySet="PET_SIZE" />
+      <End Role="PET_RECORD" EntitySet="PET_RECORD" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="AQUATIC_PET">
     <Key>
@@ -25,6 +35,7 @@
     <Property Name="SCIENTIFIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GROUP_FK" Type="Int32" Nullable="false" />
     <NavigationProperty Name="AQUATIC_GROUP" Relationship="DESD06_AQUASHOPModel.FK_AQUATIC_PET_AQUATIC_GROUP" FromRole="AQUATIC_PET" ToRole="AQUATIC_GROUP" />
+    <NavigationProperty Name="PET_RECORD" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_AQUATIC_PET" FromRole="AQUATIC_PET" ToRole="PET_RECORD" />
   </EntityType>
   <Association Name="FK_AQUATIC_PET_AQUATIC_GROUP">
     <End Type="DESD06_AQUASHOPModel.AQUATIC_GROUP" Role="AQUATIC_GROUP" Multiplicity="1" />
@@ -35,6 +46,49 @@
       </Principal>
       <Dependent Role="AQUATIC_PET">
         <PropertyRef Name="GROUP_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PET_RECORD">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PET_FK" Type="Int32" Nullable="false" />
+    <Property Name="SIZE_FK" Type="Int32" />
+    <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AQUATIC_PET" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_AQUATIC_PET" FromRole="PET_RECORD" ToRole="AQUATIC_PET" />
+    <NavigationProperty Name="PET_SIZE" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_PET_SIZE" FromRole="PET_RECORD" ToRole="PET_SIZE" />
+  </EntityType>
+  <EntityType Name="PET_SIZE">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PET_RECORD" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_PET_SIZE" FromRole="PET_SIZE" ToRole="PET_RECORD" />
+  </EntityType>
+  <Association Name="FK_PET_RECORD_AQUATIC_PET">
+    <End Type="DESD06_AQUASHOPModel.AQUATIC_PET" Role="AQUATIC_PET" Multiplicity="1" />
+    <End Type="DESD06_AQUASHOPModel.PET_RECORD" Role="PET_RECORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AQUATIC_PET">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="PET_RECORD">
+        <PropertyRef Name="PET_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PET_RECORD_PET_SIZE">
+    <End Type="DESD06_AQUASHOPModel.PET_SIZE" Role="PET_SIZE" Multiplicity="0..1" />
+    <End Type="DESD06_AQUASHOPModel.PET_RECORD" Role="PET_RECORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PET_SIZE">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="PET_RECORD">
+        <PropertyRef Name="SIZE_FK" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
