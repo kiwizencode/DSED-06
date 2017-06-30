@@ -150,6 +150,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AQUATIC_GROUPController.cs" />
+    <Compile Include="Controllers\AQUATIC_PETController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -236,6 +237,11 @@
     <Content Include="Views\AQUATIC_GROUP\Details.cshtml" />
     <Content Include="Views\AQUATIC_GROUP\Edit.cshtml" />
     <Content Include="Views\AQUATIC_GROUP\Index.cshtml" />
+    <Content Include="Views\AQUATIC_PET\Create.cshtml" />
+    <Content Include="Views\AQUATIC_PET\Delete.cshtml" />
+    <Content Include="Views\AQUATIC_PET\Details.cshtml" />
+    <Content Include="Views\AQUATIC_PET\Edit.cshtml" />
+    <Content Include="Views\AQUATIC_PET\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
