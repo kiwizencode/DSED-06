@@ -25,9 +25,10 @@
           <Key>
             <PropertyRef Name="ID_PK" />
           </Key>
-          <Property Name="ID_PK" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PET_FK" Type="int" Nullable="false" />
           <Property Name="SIZE_FK" Type="int" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PET_SIZE">
@@ -148,12 +149,13 @@
           <Key>
             <PropertyRef Name="ID_PK" />
           </Key>
-          <Property Name="ID_PK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ID_PK" Type="Int32" Nullable="false" />
           <Property Name="PET_FK" Type="Int32" Nullable="false" />
           <Property Name="SIZE_FK" Type="Int32" />
           <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AQUATIC_PET" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_AQUATIC_PET" FromRole="PET_RECORD" ToRole="AQUATIC_PET" />
           <NavigationProperty Name="PET_SIZE" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_PET_SIZE" FromRole="PET_RECORD" ToRole="PET_SIZE" />
+          <Property Name="CODE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PET_SIZE">
           <Key>
@@ -214,6 +216,7 @@
           <EntitySetMapping Name="PET_RECORD">
             <EntityTypeMapping TypeName="DESD06_AQUASHOPModel.PET_RECORD">
               <MappingFragment StoreEntitySet="PET_RECORD">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
                 <ScalarProperty Name="SIZE_FK" ColumnName="SIZE_FK" />
                 <ScalarProperty Name="PET_FK" ColumnName="PET_FK" />

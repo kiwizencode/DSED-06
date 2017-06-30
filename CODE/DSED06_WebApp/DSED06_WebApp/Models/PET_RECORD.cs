@@ -14,10 +14,11 @@ namespace DSED06_WebApp.Models
     
     public partial class PET_RECORD
     {
-        public string ID_PK { get; set; }
+        public int ID_PK { get; set; }
         public int PET_FK { get; set; }
         public Nullable<int> SIZE_FK { get; set; }
         public string DESCRIPTION { get; set; }
+        public string CODE { get; set; }
     
         public virtual AQUATIC_PET AQUATIC_PET { get; set; }
         public virtual PET_SIZE PET_SIZE { get; set; }

@@ -20,9 +20,10 @@
     <Key>
       <PropertyRef Name="ID_PK" />
     </Key>
-    <Property Name="ID_PK" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PET_FK" Type="int" Nullable="false" />
     <Property Name="SIZE_FK" Type="int" />
+    <Property Name="CODE" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="PET_SIZE">

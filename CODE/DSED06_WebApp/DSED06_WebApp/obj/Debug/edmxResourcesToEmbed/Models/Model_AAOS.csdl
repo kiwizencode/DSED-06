@@ -53,12 +53,13 @@
     <Key>
       <PropertyRef Name="ID_PK" />
     </Key>
-    <Property Name="ID_PK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ID_PK" Type="Int32" Nullable="false" />
     <Property Name="PET_FK" Type="Int32" Nullable="false" />
     <Property Name="SIZE_FK" Type="Int32" />
     <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AQUATIC_PET" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_AQUATIC_PET" FromRole="PET_RECORD" ToRole="AQUATIC_PET" />
     <NavigationProperty Name="PET_SIZE" Relationship="DESD06_AQUASHOPModel.FK_PET_RECORD_PET_SIZE" FromRole="PET_RECORD" ToRole="PET_SIZE" />
+    <Property Name="CODE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="PET_SIZE">
     <Key>

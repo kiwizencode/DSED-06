@@ -22,6 +22,7 @@
     <EntitySetMapping Name="PET_RECORD">
       <EntityTypeMapping TypeName="DESD06_AQUASHOPModel.PET_RECORD">
         <MappingFragment StoreEntitySet="PET_RECORD">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
           <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
           <ScalarProperty Name="SIZE_FK" ColumnName="SIZE_FK" />
           <ScalarProperty Name="PET_FK" ColumnName="PET_FK" />
