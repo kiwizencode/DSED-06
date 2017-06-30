@@ -4,14 +4,16 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Pet Size Details</h2>
 
 <div>
-    <h4>PET_SIZE</h4>
+    <!-- <h4>PET_SIZE</h4>   -->
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
+            @* @Html.DisplayNameFor(model => model.DESCRIPTION)   *@
+            Description :
         </dt>
 
         <dd>
@@ -21,6 +23,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PK }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit Pet Size", "Edit", new { id = Model.ID_PK }) |
+    @Html.ActionLink("Back to Pet Size Maintenance Page", "Index")
 </p>

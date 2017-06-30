@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Pet Size Maintenance Page</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,12 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
+            @*  @Html.DisplayNameFor(model => model.DESCRIPTION)  *@
+            Pet Size Description
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.OrderByDescending(x => x.DESCRIPTION)) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.DESCRIPTION)
@@ -31,3 +32,7 @@
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Back to Aquatic Pet Store Main Page", "Index", "Home")
+</div>
