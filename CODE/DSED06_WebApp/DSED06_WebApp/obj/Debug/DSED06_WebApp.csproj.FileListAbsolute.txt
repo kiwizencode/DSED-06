@@ -65,3 +65,7 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_Web
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\obj\Debug\DSED06_WebApp.csprojResolveAssemblyReference.cache
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\obj\Debug\DSED06_WebApp.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\obj\Debug\DSED06_WebApp.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.xml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_WebApp\DSED06_WebApp\bin\EntityFramework.SqlServer.xml

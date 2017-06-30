@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DESD06_AQUASHOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AQUATIC_GROUP">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DESD06_AQUASHOPModelStoreContainer">
+    <EntitySet Name="AQUATIC_GROUP" EntityType="Self.AQUATIC_GROUP" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DESD06_AQUASHOPModelStoreContainer" CdmEntityContainer="DESD06_AQUASHOPEntities">
+    <EntitySetMapping Name="AQUATIC_GROUP">
+      <EntityTypeMapping TypeName="DESD06_AQUASHOPModel.AQUATIC_GROUP">
+        <MappingFragment StoreEntitySet="AQUATIC_GROUP">
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
