@@ -39,8 +39,9 @@ namespace DSED06_WebApp.Controllers
         // GET: PET_RECORD/Create
         public ActionResult Create()
         {
-            ViewBag.PET_FK = new SelectList(db.AQUATIC_PET, "ID_PK", "COMMON");
-            ViewBag.SIZE_FK = new SelectList(db.PET_SIZE, "ID_PK", "DESCRIPTION");
+            ViewBag.PET_FK = new SelectList(db.AQUATIC_PET, "ID_PK", "COMMON").OrderBy(x => x.Text );
+            ViewBag.SIZE_FK = new SelectList(db.PET_SIZE, "ID_PK", "DESCRIPTION")
+                                .OrderBy(x => x.Text, new DSED06_WebApp.Code_Common.PetSizeComparer());
             return View();
         }
 
