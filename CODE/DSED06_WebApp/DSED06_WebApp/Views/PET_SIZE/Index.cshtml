@@ -19,7 +19,7 @@
     </tr>
 
 @foreach (var item in Model.OrderBy(x => x.DESCRIPTION, 
-                                    new DSED06_WebApp.Code_Common.SemiNumericComparer())) {
+                                    new DSED06_WebApp.Code_Common.PetSizeComparer())) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.DESCRIPTION)
