@@ -14,12 +14,6 @@ namespace DSED06_Aquatic_Pet_Store.Models
     
     public partial class PET_RECORD
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PET_RECORD()
-        {
-            this.RECORD_PACKING = new HashSet<RECORD_PACKING>();
-        }
-    
         public int ID_PK { get; set; }
         public int PET_FK { get; set; }
         public Nullable<int> SIZE_FK { get; set; }
@@ -28,7 +22,5 @@ namespace DSED06_Aquatic_Pet_Store.Models
     
         public virtual PET_INFO PET_INFO { get; set; }
         public virtual PET_SIZE PET_SIZE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RECORD_PACKING> RECORD_PACKING { get; set; }
     }
 }

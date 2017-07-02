@@ -153,7 +153,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PET_GROUPController.cs" />
     <Compile Include="Controllers\PET_INFOController.cs" />
-    <Compile Include="Controllers\PET_PACKINGController.cs" />
     <Compile Include="Controllers\PET_RECORDController.cs" />
     <Compile Include="Controllers\PET_SIZEController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,16 +179,10 @@
     <Compile Include="Models\PET_INFO.cs">
       <DependentUpon>Model_APS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PET_PACKING.cs">
-      <DependentUpon>Model_APS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\PET_RECORD.cs">
       <DependentUpon>Model_APS.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PET_SIZE.cs">
-      <DependentUpon>Model_APS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RECORD_PACKING.cs">
       <DependentUpon>Model_APS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -268,11 +261,6 @@
     <Content Include="Views\PET_RECORD\Details.cshtml" />
     <Content Include="Views\PET_RECORD\Edit.cshtml" />
     <Content Include="Views\PET_RECORD\Index.cshtml" />
-    <Content Include="Views\PET_PACKING\Create.cshtml" />
-    <Content Include="Views\PET_PACKING\Delete.cshtml" />
-    <Content Include="Views\PET_PACKING\Details.cshtml" />
-    <Content Include="Views\PET_PACKING\Edit.cshtml" />
-    <Content Include="Views\PET_PACKING\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
