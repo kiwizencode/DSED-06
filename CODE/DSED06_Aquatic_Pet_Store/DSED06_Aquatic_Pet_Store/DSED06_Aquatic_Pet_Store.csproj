@@ -149,9 +149,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common_Code\PetSizeComparer.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PET_GROUPController.cs" />
     <Compile Include="Controllers\PET_INFOController.cs" />
+    <Compile Include="Controllers\PET_SIZEController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -254,6 +256,11 @@
     <Content Include="Views\PET_INFO\Details.cshtml" />
     <Content Include="Views\PET_INFO\Edit.cshtml" />
     <Content Include="Views\PET_INFO\Index.cshtml" />
+    <Content Include="Views\PET_SIZE\Create.cshtml" />
+    <Content Include="Views\PET_SIZE\Delete.cshtml" />
+    <Content Include="Views\PET_SIZE\Details.cshtml" />
+    <Content Include="Views\PET_SIZE\Edit.cshtml" />
+    <Content Include="Views\PET_SIZE\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
