@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AQUATIC_PET_STORE_ModelStoreContainer" CdmEntityContainer="AQUATIC_PET_STORE_Entities">
+    <EntitySetMapping Name="PET_GROUP">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_GROUP">
+        <MappingFragment StoreEntitySet="PET_GROUP">
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PET_INFO">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_INFO">
+        <MappingFragment StoreEntitySet="PET_INFO">
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+          <ScalarProperty Name="GROUP_FK" ColumnName="GROUP_FK" />
+          <ScalarProperty Name="COMMON" ColumnName="COMMON" />
+          <ScalarProperty Name="SCIENTIFIC" ColumnName="SCIENTIFIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PET_PACKAGE">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_PACKAGE">
+        <MappingFragment StoreEntitySet="PET_PACKAGE">
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PET_RECORD">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_RECORD">
+        <MappingFragment StoreEntitySet="PET_RECORD">
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+          <ScalarProperty Name="PET_FK" ColumnName="PET_FK" />
+          <ScalarProperty Name="SIZE_FK" ColumnName="SIZE_FK" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PET_SIZE">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_SIZE">
+        <MappingFragment StoreEntitySet="PET_SIZE">
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECORD_PACKAGE">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.RECORD_PACKAGE">
+        <MappingFragment StoreEntitySet="RECORD_PACKAGE">
+          <ScalarProperty Name="RECORD_FK" ColumnName="RECORD_FK" />
+          <ScalarProperty Name="PACKAGE_FK" ColumnName="PACKAGE_FK" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

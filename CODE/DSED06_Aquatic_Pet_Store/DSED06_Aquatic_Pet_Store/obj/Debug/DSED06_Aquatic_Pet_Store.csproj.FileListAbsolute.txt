@@ -65,3 +65,7 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\obj\Debug\DSED06_Aquatic_Pet_Store.csprojResolveAssemblyReference.cache
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\obj\Debug\DSED06_Aquatic_Pet_Store.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\obj\Debug\DSED06_Aquatic_Pet_Store.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\bin\EntityFramework.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\bin\EntityFramework.SqlServer.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\bin\EntityFramework.xml
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-06\CODE\DSED06_Aquatic_Pet_Store\DSED06_Aquatic_Pet_Store\bin\EntityFramework.SqlServer.xml
