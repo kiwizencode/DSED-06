@@ -19,14 +19,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PET_PACKAGE">
-      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_PACKAGE">
-        <MappingFragment StoreEntitySet="PET_PACKAGE">
-          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
-          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PET_RECORD">
       <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_RECORD">
         <MappingFragment StoreEntitySet="PET_RECORD">
@@ -46,12 +38,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RECORD_PACKAGE">
-      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.RECORD_PACKAGE">
-        <MappingFragment StoreEntitySet="RECORD_PACKAGE">
-          <ScalarProperty Name="RECORD_FK" ColumnName="RECORD_FK" />
-          <ScalarProperty Name="PACKAGE_FK" ColumnName="PACKAGE_FK" />
+    <EntitySetMapping Name="PET_PACKING">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.PET_PACKING">
+        <MappingFragment StoreEntitySet="PET_PACKING">
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ID_PK" ColumnName="ID_PK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECORD_PACKING">
+      <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.RECORD_PACKING">
+        <MappingFragment StoreEntitySet="RECORD_PACKING">
           <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PACKAGE_FK" ColumnName="PACKAGE_FK" />
+          <ScalarProperty Name="RECORD_FK" ColumnName="RECORD_FK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

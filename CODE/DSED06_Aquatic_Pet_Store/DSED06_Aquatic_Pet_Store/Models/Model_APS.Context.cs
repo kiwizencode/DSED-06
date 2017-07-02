@@ -27,9 +27,9 @@ namespace DSED06_Aquatic_Pet_Store.Models
     
         public virtual DbSet<PET_GROUP> PET_GROUP { get; set; }
         public virtual DbSet<PET_INFO> PET_INFO { get; set; }
-        public virtual DbSet<PET_PACKAGE> PET_PACKAGE { get; set; }
         public virtual DbSet<PET_RECORD> PET_RECORD { get; set; }
         public virtual DbSet<PET_SIZE> PET_SIZE { get; set; }
-        public virtual DbSet<RECORD_PACKAGE> RECORD_PACKAGE { get; set; }
+        public virtual DbSet<PET_PACKING> PET_PACKING { get; set; }
+        public virtual DbSet<RECORD_PACKING> RECORD_PACKING { get; set; }
     }
 }

@@ -19,14 +19,6 @@
     <NavigationProperty Name="PET_GROUP" Relationship="Self.FK_PET_INFO_PET_GROUP" FromRole="PET_INFO" ToRole="PET_GROUP" />
     <NavigationProperty Name="PET_RECORD" Relationship="Self.FK_PET_RECORD_PET_INFO" FromRole="PET_INFO" ToRole="PET_RECORD" />
   </EntityType>
-  <EntityType Name="PET_PACKAGE">
-    <Key>
-      <PropertyRef Name="ID_PK" />
-    </Key>
-    <Property Name="ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DESCRIPTION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="RECORD_PACKAGE" Relationship="Self.FK_RECORD_PACKAGE_PET_PACKAGE" FromRole="PET_PACKAGE" ToRole="RECORD_PACKAGE" />
-  </EntityType>
   <EntityType Name="PET_RECORD">
     <Key>
       <PropertyRef Name="ID_PK" />
@@ -38,7 +30,7 @@
     <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="PET_INFO" Relationship="Self.FK_PET_RECORD_PET_INFO" FromRole="PET_RECORD" ToRole="PET_INFO" />
     <NavigationProperty Name="PET_SIZE" Relationship="Self.FK_PET_RECORD_PET_SIZE" FromRole="PET_RECORD" ToRole="PET_SIZE" />
-    <NavigationProperty Name="RECORD_PACKAGE" Relationship="Self.FK_RECORD_PACKAGE_PET_RECORD" FromRole="PET_RECORD" ToRole="RECORD_PACKAGE" />
+    <NavigationProperty Name="RECORD_PACKING" Relationship="AQUATIC_PET_STORE_Model.FK_RECORD_PACKAGE_PET_RECORD" FromRole="PET_RECORD" ToRole="RECORD_PACKING" />
   </EntityType>
   <EntityType Name="PET_SIZE">
     <Key>
@@ -47,18 +39,6 @@
     <Property Name="ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DESCRIPTION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="PET_RECORD" Relationship="Self.FK_PET_RECORD_PET_SIZE" FromRole="PET_SIZE" ToRole="PET_RECORD" />
-  </EntityType>
-  <EntityType Name="RECORD_PACKAGE">
-    <Key>
-      <PropertyRef Name="RECORD_FK" />
-      <PropertyRef Name="PACKAGE_FK" />
-      <PropertyRef Name="QUANTITY" />
-    </Key>
-    <Property Name="RECORD_FK" Type="Int32" Nullable="false" />
-    <Property Name="PACKAGE_FK" Type="Int32" Nullable="false" />
-    <Property Name="QUANTITY" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="PET_PACKAGE" Relationship="Self.FK_RECORD_PACKAGE_PET_PACKAGE" FromRole="RECORD_PACKAGE" ToRole="PET_PACKAGE" />
-    <NavigationProperty Name="PET_RECORD" Relationship="Self.FK_RECORD_PACKAGE_PET_RECORD" FromRole="RECORD_PACKAGE" ToRole="PET_RECORD" />
   </EntityType>
   <Association Name="FK_PET_INFO_PET_GROUP">
     <End Role="PET_GROUP" Type="Self.PET_GROUP" Multiplicity="1" />
@@ -84,18 +64,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RECORD_PACKAGE_PET_PACKAGE">
-    <End Role="PET_PACKAGE" Type="Self.PET_PACKAGE" Multiplicity="1" />
-    <End Role="RECORD_PACKAGE" Type="Self.RECORD_PACKAGE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PET_PACKAGE">
-        <PropertyRef Name="ID_PK" />
-      </Principal>
-      <Dependent Role="RECORD_PACKAGE">
-        <PropertyRef Name="PACKAGE_FK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_PET_RECORD_PET_SIZE">
     <End Role="PET_SIZE" Type="Self.PET_SIZE" Multiplicity="0..1" />
     <End Role="PET_RECORD" Type="Self.PET_RECORD" Multiplicity="*" />
@@ -108,25 +76,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RECORD_PACKAGE_PET_RECORD">
-    <End Role="PET_RECORD" Type="Self.PET_RECORD" Multiplicity="1" />
-    <End Role="RECORD_PACKAGE" Type="Self.RECORD_PACKAGE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PET_RECORD">
-        <PropertyRef Name="ID_PK" />
-      </Principal>
-      <Dependent Role="RECORD_PACKAGE">
-        <PropertyRef Name="RECORD_FK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="AQUATIC_PET_STORE_Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="PET_GROUP" EntityType="Self.PET_GROUP" />
     <EntitySet Name="PET_INFO" EntityType="Self.PET_INFO" />
-    <EntitySet Name="PET_PACKAGE" EntityType="Self.PET_PACKAGE" />
     <EntitySet Name="PET_RECORD" EntityType="Self.PET_RECORD" />
     <EntitySet Name="PET_SIZE" EntityType="Self.PET_SIZE" />
-    <EntitySet Name="RECORD_PACKAGE" EntityType="Self.RECORD_PACKAGE" />
     <AssociationSet Name="FK_PET_INFO_PET_GROUP" Association="Self.FK_PET_INFO_PET_GROUP">
       <End Role="PET_GROUP" EntitySet="PET_GROUP" />
       <End Role="PET_INFO" EntitySet="PET_INFO" />
@@ -135,17 +89,63 @@
       <End Role="PET_INFO" EntitySet="PET_INFO" />
       <End Role="PET_RECORD" EntitySet="PET_RECORD" />
     </AssociationSet>
-    <AssociationSet Name="FK_RECORD_PACKAGE_PET_PACKAGE" Association="Self.FK_RECORD_PACKAGE_PET_PACKAGE">
-      <End Role="PET_PACKAGE" EntitySet="PET_PACKAGE" />
-      <End Role="RECORD_PACKAGE" EntitySet="RECORD_PACKAGE" />
-    </AssociationSet>
     <AssociationSet Name="FK_PET_RECORD_PET_SIZE" Association="Self.FK_PET_RECORD_PET_SIZE">
       <End Role="PET_SIZE" EntitySet="PET_SIZE" />
       <End Role="PET_RECORD" EntitySet="PET_RECORD" />
     </AssociationSet>
-    <AssociationSet Name="FK_RECORD_PACKAGE_PET_RECORD" Association="Self.FK_RECORD_PACKAGE_PET_RECORD">
+    <EntitySet Name="PET_PACKING" EntityType="AQUATIC_PET_STORE_Model.PET_PACKING" />
+    <EntitySet Name="RECORD_PACKING" EntityType="AQUATIC_PET_STORE_Model.RECORD_PACKING" />
+    <AssociationSet Name="FK_RECORD_PACKAGE_PET_PACKAGE" Association="AQUATIC_PET_STORE_Model.FK_RECORD_PACKAGE_PET_PACKAGE">
+      <End Role="PET_PACKING" EntitySet="PET_PACKING" />
+      <End Role="RECORD_PACKING" EntitySet="RECORD_PACKING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECORD_PACKAGE_PET_RECORD" Association="AQUATIC_PET_STORE_Model.FK_RECORD_PACKAGE_PET_RECORD">
       <End Role="PET_RECORD" EntitySet="PET_RECORD" />
-      <End Role="RECORD_PACKAGE" EntitySet="RECORD_PACKAGE" />
+      <End Role="RECORD_PACKING" EntitySet="RECORD_PACKING" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="PET_PACKING">
+    <Key>
+      <PropertyRef Name="ID_PK" />
+    </Key>
+    <Property Name="ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RECORD_PACKING" Relationship="AQUATIC_PET_STORE_Model.FK_RECORD_PACKAGE_PET_PACKAGE" FromRole="PET_PACKING" ToRole="RECORD_PACKING" />
+  </EntityType>
+  <EntityType Name="RECORD_PACKING">
+    <Key>
+      <PropertyRef Name="RECORD_FK" />
+      <PropertyRef Name="PACKAGE_FK" />
+      <PropertyRef Name="QUANTITY" />
+    </Key>
+    <Property Name="RECORD_FK" Type="Int32" Nullable="false" />
+    <Property Name="PACKAGE_FK" Type="Int32" Nullable="false" />
+    <Property Name="QUANTITY" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PET_PACKING" Relationship="AQUATIC_PET_STORE_Model.FK_RECORD_PACKAGE_PET_PACKAGE" FromRole="RECORD_PACKING" ToRole="PET_PACKING" />
+    <NavigationProperty Name="PET_RECORD" Relationship="AQUATIC_PET_STORE_Model.FK_RECORD_PACKAGE_PET_RECORD" FromRole="RECORD_PACKING" ToRole="PET_RECORD" />
+  </EntityType>
+  <Association Name="FK_RECORD_PACKAGE_PET_PACKAGE">
+    <End Type="AQUATIC_PET_STORE_Model.PET_PACKING" Role="PET_PACKING" Multiplicity="1" />
+    <End Type="AQUATIC_PET_STORE_Model.RECORD_PACKING" Role="RECORD_PACKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PET_PACKING">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="RECORD_PACKING">
+        <PropertyRef Name="PACKAGE_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECORD_PACKAGE_PET_RECORD">
+    <End Type="AQUATIC_PET_STORE_Model.PET_RECORD" Role="PET_RECORD" Multiplicity="1" />
+    <End Type="AQUATIC_PET_STORE_Model.RECORD_PACKING" Role="RECORD_PACKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PET_RECORD">
+        <PropertyRef Name="ID_PK" />
+      </Principal>
+      <Dependent Role="RECORD_PACKING">
+        <PropertyRef Name="RECORD_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
