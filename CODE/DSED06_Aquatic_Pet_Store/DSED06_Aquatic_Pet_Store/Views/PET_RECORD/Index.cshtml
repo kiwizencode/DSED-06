@@ -18,11 +18,17 @@
             @* @Html.DisplayNameFor(model => model.CODE) *@
             Code
         </th>
-
+        <th>
+            @* @Html.DisplayNameFor(model => model.PET_SIZE.DESCRIPTION) *@
+            Size
+        </th>
         <th>
             @* @Html.DisplayNameFor(model => model.DESCRIPTION) *@
             Description
         </th>
+        
+
+
         <th>
             @* @Html.DisplayNameFor(model => model.AQUATIC_PET.COMMON) *@
             Common Name
@@ -32,10 +38,7 @@
             Scientific Name
         </th>
 
-        <th>
-            @* @Html.DisplayNameFor(model => model.PET_SIZE.DESCRIPTION) *@
-            Size
-        </th>
+
         <th></th>
     </tr>
 @{ int a = 0; }
@@ -46,19 +49,21 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CODE)
+        <td>
+            @Html.DisplayFor(modelItem => item.PET_SIZE.DESCRIPTION)
+        </td>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DESCRIPTION)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.PET_INFO.COMMON)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PET_INFO.SCIENTIFIC)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PET_SIZE.DESCRIPTION)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID_PK }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID_PK }) |
