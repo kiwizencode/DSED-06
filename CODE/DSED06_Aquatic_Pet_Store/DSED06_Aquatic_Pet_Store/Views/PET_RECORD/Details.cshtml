@@ -7,19 +7,13 @@
 <h2>Details</h2>
 
 <div>
-    <h4>PET_RECORD</h4>
+    <!-- <h4>PET_RECORD</h4>  -->
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DESCRIPTION)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CODE)
+            @* @Html.DisplayNameFor(model => model.CODE)  *@
+            Code :
         </dt>
 
         <dd>
@@ -27,17 +21,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AQUATIC_PET.COMMON)
+            @* @Html.DisplayNameFor(model => model.DESCRIPTION)  *@
+            Description :
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AQUATIC_PET.COMMON)
+            @Html.DisplayFor(model => model.DESCRIPTION)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PET_SIZE.DESCRIPTION)
+            @* @Html.DisplayNameFor(model => model.PET_INFO.COMMON)  *@
+            Common Name :
         </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.PET_INFO.COMMON)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.PET_SIZE.DESCRIPTION)  *@
+            Size :
+        </dt>
         <dd>
             @Html.DisplayFor(model => model.PET_SIZE.DESCRIPTION)
         </dd>
@@ -45,6 +49,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PK }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit Pet Record", "Edit", new { id = Model.ID_PK }) |
+    @Html.ActionLink("Back to Pet Record Maintenance Page", "Index")
 </p>

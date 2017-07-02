@@ -153,6 +153,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PET_GROUPController.cs" />
     <Compile Include="Controllers\PET_INFOController.cs" />
+    <Compile Include="Controllers\PET_PACKAGEController.cs" />
     <Compile Include="Controllers\PET_RECORDController.cs" />
     <Compile Include="Controllers\PET_SIZEController.cs" />
     <Compile Include="Global.asax.cs">
@@ -267,6 +268,11 @@
     <Content Include="Views\PET_RECORD\Details.cshtml" />
     <Content Include="Views\PET_RECORD\Edit.cshtml" />
     <Content Include="Views\PET_RECORD\Index.cshtml" />
+    <Content Include="Views\PET_PACKAGE\Create.cshtml" />
+    <Content Include="Views\PET_PACKAGE\Delete.cshtml" />
+    <Content Include="Views\PET_PACKAGE\Details.cshtml" />
+    <Content Include="Views\PET_PACKAGE\Edit.cshtml" />
+    <Content Include="Views\PET_PACKAGE\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

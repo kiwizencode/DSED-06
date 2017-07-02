@@ -8,19 +8,13 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>PET_RECORD</h4>
+    <!-- <h4>PET_RECORD</h4>   -->
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DESCRIPTION)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CODE)
+            @* @Html.DisplayNameFor(model => model.CODE)  *@
+            Code :
         </dt>
 
         <dd>
@@ -28,17 +22,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AQUATIC_PET.COMMON)
+            @* @Html.DisplayNameFor(model => model.DESCRIPTION)  *@
+            Description :
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AQUATIC_PET.COMMON)
+            @Html.DisplayFor(model => model.DESCRIPTION)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PET_SIZE.DESCRIPTION)
+            @* @Html.DisplayNameFor(model => model.PET_INFO.COMMON)  *@
+            Common Name :
         </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.PET_INFO.COMMON)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.PET_SIZE.DESCRIPTION)  *@
+            Size :
+        </dt>
         <dd>
             @Html.DisplayFor(model => model.PET_SIZE.DESCRIPTION)
         </dd>
@@ -49,8 +53,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-default col-md-offset-1" />
+            <!--  |  -->
+            <p>&nbsp</p>
+            @Html.ActionLink("Back to Pet Record Maintenance Page", "Index")
         </div>
     }
 </div>

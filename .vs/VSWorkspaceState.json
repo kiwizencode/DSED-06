@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\CODE",
-    "\\CODE\\AquaticStoreWebApp"
+    "\\CODE\\AquaticStoreWebApp\\AquaticStoreWebApp",
+    "\\CODE\\AquaticStoreWebApp\\AquaticStoreWebApp\\Views",
+    "\\CODE\\DSED06_WebApp"
   ],
+  "SelectedNode": "\\CODE\\DSED06_WebApp\\DSED06_WebApp.sln",
   "PreviewInSolutionExplorer": false
 }
