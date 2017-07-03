@@ -12,6 +12,8 @@
         <AssociationConnector Association="AQUATIC_PET_STORE_Model.FK_PET_INFO_PET_GROUP" ManuallyRouted="false" />
         <AssociationConnector Association="AQUATIC_PET_STORE_Model.FK_PET_RECORD_PET_INFO" ManuallyRouted="false" />
         <AssociationConnector Association="AQUATIC_PET_STORE_Model.FK_PET_RECORD_PET_SIZE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AQUATIC_PET_STORE_Model.RECORD_PACKING" Width="1.5" PointX="6.125" PointY="2.875" />
+        <AssociationConnector Association="AQUATIC_PET_STORE_Model.FK_RECORD_PACKING_PET_RECORD" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

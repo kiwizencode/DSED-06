@@ -185,6 +185,9 @@
     <Compile Include="Models\PET_SIZE.cs">
       <DependentUpon>Model_APS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RECORD_PACKING.cs">
+      <DependentUpon>Model_APS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
