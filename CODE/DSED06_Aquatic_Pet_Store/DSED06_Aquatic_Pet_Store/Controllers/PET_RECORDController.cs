@@ -51,7 +51,7 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID_PK,PET_FK,SIZE_FK,CODE,DESCRIPTION")] PET_RECORD pET_RECORD)
-        {
+        {            
             if (ModelState.IsValid)
             {
                 db.PET_RECORD.Add(pET_RECORD);
