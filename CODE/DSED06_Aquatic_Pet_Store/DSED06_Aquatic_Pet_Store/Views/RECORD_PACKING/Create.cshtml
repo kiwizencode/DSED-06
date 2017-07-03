@@ -25,6 +25,20 @@
             </div>
         </div>
 
+        <div class="panel-group">
+            <dl class="dl-horizontal">
+                <dt>Pet Description :</dt>
+                <dd>
+                    <b><i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @Html.DisplayFor(model => model.PET_RECORD.DESCRIPTION)</i></b>
+                </dd>
+                <br />
+                <dt>Pet Size :</dt>
+                <dd>
+                    <b><i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @Html.DisplayFor(model => model.PET_RECORD.PET_SIZE.DESCRIPTION)</i></b>
+                </dd>
+            </dl>
+        </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.BAG, "Bag :", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
