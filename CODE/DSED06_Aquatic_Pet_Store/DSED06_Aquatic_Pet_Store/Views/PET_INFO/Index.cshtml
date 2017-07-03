@@ -33,10 +33,7 @@
     @{ int a = 0; }
     @foreach (var item in Model.OrderBy(x => x.PET_GROUP.NAME).ThenBy(n => n.COMMON)) {
         <tr>
-            <td>
-                @(++a)
-            </td>
-
+            <td>@(++a)</td>
             <td>
                 @Html.DisplayFor(modelItem => item.PET_GROUP.NAME)
             </td>
