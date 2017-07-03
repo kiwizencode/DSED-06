@@ -18,7 +18,6 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
         public ActionResult Index()
         {
             var rECORD_PACKING = db.RECORD_PACKING.Include(r => r.PET_RECORD);
-            
             return View(rECORD_PACKING.ToList());
         }
 
@@ -41,7 +40,6 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
         public ActionResult Create()
         {
             ViewBag.RECORD_FK = new SelectList(db.PET_RECORD, "ID_PK", "CODE");
-            ViewBag.RecordList = db.PET_RECORD.ToList();
             return View();
         }
 
@@ -129,16 +127,6 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-         
         }
-
-        public ActionResult GetPetRecord(int id)
-        {
-            var petRecord = db.PET_RECORD.Where(c => c.ID_PK == id);
-            return Json(petRecord, JsonRequestBehavior.AllowGet);
-        }
-
     }
-
-
 }
