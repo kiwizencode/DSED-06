@@ -16,13 +16,6 @@
     <Property Name="COMMON" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="SCIENTIFIC" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="PET_PACKING">
-    <Key>
-      <PropertyRef Name="ID_PK" />
-    </Key>
-    <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="15" Nullable="false" />
-  </EntityType>
   <EntityType Name="PET_RECORD">
     <Key>
       <PropertyRef Name="ID_PK" />
@@ -45,12 +38,12 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
   <EntityType Name="RECORD_PACKING">
     <Key>
       <PropertyRef Name="RECORD_FK" />
-      <PropertyRef Name="PACKAGE_FK" />
-      <PropertyRef Name="QUANTITY" />
+      <PropertyRef Name="BAG" />
+      <PropertyRef Name="BOX" />
     </Key>
     <Property Name="RECORD_FK" Type="int" Nullable="false" />
-    <Property Name="PACKAGE_FK" Type="int" Nullable="false" />
-    <Property Name="QUANTITY" Type="int" Nullable="false" />
+    <Property Name="BAG" Type="int" Nullable="false" />
+    <Property Name="BOX" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_PET_INFO_PET_GROUP">
     <End Role="PET_GROUP" Type="Self.PET_GROUP" Multiplicity="1" />
@@ -88,19 +81,7 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RECORD_PACKAGE_PET_PACKAGE">
-    <End Role="PET_PACKING" Type="Self.PET_PACKING" Multiplicity="1" />
-    <End Role="RECORD_PACKING" Type="Self.RECORD_PACKING" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PET_PACKING">
-        <PropertyRef Name="ID_PK" />
-      </Principal>
-      <Dependent Role="RECORD_PACKING">
-        <PropertyRef Name="PACKAGE_FK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RECORD_PACKAGE_PET_RECORD">
+  <Association Name="FK_RECORD_PACKING_PET_RECORD">
     <End Role="PET_RECORD" Type="Self.PET_RECORD" Multiplicity="1" />
     <End Role="RECORD_PACKING" Type="Self.RECORD_PACKING" Multiplicity="*" />
     <ReferentialConstraint>
@@ -115,14 +96,13 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
   <EntityContainer Name="AQUATIC_PET_STORE_ModelStoreContainer">
     <EntitySet Name="PET_GROUP" EntityType="Self.PET_GROUP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PET_INFO" EntityType="Self.PET_INFO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PET_PACKING" EntityType="Self.PET_PACKING" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PET_RECORD" EntityType="Self.PET_RECORD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PET_SIZE" EntityType="Self.PET_SIZE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RECORD_PACKING" EntityType="Self.RECORD_PACKING" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [RECORD_PACKING].[RECORD_FK] AS [RECORD_FK], 
-    [RECORD_PACKING].[PACKAGE_FK] AS [PACKAGE_FK], 
-    [RECORD_PACKING].[QUANTITY] AS [QUANTITY]
+    [RECORD_PACKING].[BAG] AS [BAG], 
+    [RECORD_PACKING].[BOX] AS [BOX]
     FROM [dbo].[RECORD_PACKING] AS [RECORD_PACKING]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_PET_INFO_PET_GROUP" Association="Self.FK_PET_INFO_PET_GROUP">
@@ -137,11 +117,7 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
       <End Role="PET_SIZE" EntitySet="PET_SIZE" />
       <End Role="PET_RECORD" EntitySet="PET_RECORD" />
     </AssociationSet>
-    <AssociationSet Name="FK_RECORD_PACKAGE_PET_PACKAGE" Association="Self.FK_RECORD_PACKAGE_PET_PACKAGE">
-      <End Role="PET_PACKING" EntitySet="PET_PACKING" />
-      <End Role="RECORD_PACKING" EntitySet="RECORD_PACKING" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RECORD_PACKAGE_PET_RECORD" Association="Self.FK_RECORD_PACKAGE_PET_RECORD">
+    <AssociationSet Name="FK_RECORD_PACKING_PET_RECORD" Association="Self.FK_RECORD_PACKING_PET_RECORD">
       <End Role="PET_RECORD" EntitySet="PET_RECORD" />
       <End Role="RECORD_PACKING" EntitySet="RECORD_PACKING" />
     </AssociationSet>

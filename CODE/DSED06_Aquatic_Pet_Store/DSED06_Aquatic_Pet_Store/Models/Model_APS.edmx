@@ -43,12 +43,12 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
         <EntityType Name="RECORD_PACKING">
           <Key>
             <PropertyRef Name="RECORD_FK" />
-            <PropertyRef Name="PACKAGE_FK" />
-            <PropertyRef Name="QUANTITY" />
+            <PropertyRef Name="BAG" />
+            <PropertyRef Name="BOX" />
           </Key>
           <Property Name="RECORD_FK" Type="int" Nullable="false" />
-          <Property Name="PACKAGE_FK" Type="int" Nullable="false" />
-          <Property Name="QUANTITY" Type="int" Nullable="false" />
+          <Property Name="BAG" Type="int" Nullable="false" />
+          <Property Name="BOX" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_PET_INFO_PET_GROUP">
           <End Role="PET_GROUP" Type="Self.PET_GROUP" Multiplicity="1" />
@@ -106,8 +106,8 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
           <EntitySet Name="RECORD_PACKING" EntityType="Self.RECORD_PACKING" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [RECORD_PACKING].[RECORD_FK] AS [RECORD_FK], 
-    [RECORD_PACKING].[PACKAGE_FK] AS [PACKAGE_FK], 
-    [RECORD_PACKING].[QUANTITY] AS [QUANTITY]
+    [RECORD_PACKING].[BAG] AS [BAG], 
+    [RECORD_PACKING].[BOX] AS [BOX]
     FROM [dbo].[RECORD_PACKING] AS [RECORD_PACKING]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_PET_INFO_PET_GROUP" Association="Self.FK_PET_INFO_PET_GROUP">
@@ -233,12 +233,12 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
         <EntityType Name="RECORD_PACKING">
           <Key>
             <PropertyRef Name="RECORD_FK" />
-            <PropertyRef Name="PACKAGE_FK" />
-            <PropertyRef Name="QUANTITY" />
+            <PropertyRef Name="BAG" />
+            <PropertyRef Name="BOX" />
           </Key>
           <Property Name="RECORD_FK" Type="Int32" Nullable="false" />
-          <Property Name="PACKAGE_FK" Type="Int32" Nullable="false" />
-          <Property Name="QUANTITY" Type="Int32" Nullable="false" />
+          <Property Name="BAG" Type="Int32" Nullable="false" />
+          <Property Name="BOX" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PET_RECORD" Relationship="AQUATIC_PET_STORE_Model.FK_RECORD_PACKING_PET_RECORD" FromRole="RECORD_PACKING" ToRole="PET_RECORD" />
         </EntityType>
         <Association Name="FK_RECORD_PACKING_PET_RECORD">
@@ -299,8 +299,8 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
           <EntitySetMapping Name="RECORD_PACKING">
             <EntityTypeMapping TypeName="AQUATIC_PET_STORE_Model.RECORD_PACKING">
               <MappingFragment StoreEntitySet="RECORD_PACKING">
-                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
-                <ScalarProperty Name="PACKAGE_FK" ColumnName="PACKAGE_FK" />
+                <ScalarProperty Name="BOX" ColumnName="BOX" />
+                <ScalarProperty Name="BAG" ColumnName="BAG" />
                 <ScalarProperty Name="RECORD_FK" ColumnName="RECORD_FK" />
               </MappingFragment>
             </EntityTypeMapping>

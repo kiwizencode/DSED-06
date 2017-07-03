@@ -15,8 +15,8 @@ namespace DSED06_Aquatic_Pet_Store.Models
     public partial class RECORD_PACKING
     {
         public int RECORD_FK { get; set; }
-        public int PACKAGE_FK { get; set; }
-        public int QUANTITY { get; set; }
+        public int BAG { get; set; }
+        public int BOX { get; set; }
     
         public virtual PET_RECORD PET_RECORD { get; set; }
     }
