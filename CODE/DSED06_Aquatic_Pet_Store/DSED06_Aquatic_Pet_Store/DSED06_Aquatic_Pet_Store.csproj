@@ -155,6 +155,7 @@
     <Compile Include="Controllers\PET_INFOController.cs" />
     <Compile Include="Controllers\PET_RECORDController.cs" />
     <Compile Include="Controllers\PET_SIZEController.cs" />
+    <Compile Include="Controllers\RECORD_PACKINGController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,6 +265,11 @@
     <Content Include="Views\PET_RECORD\Details.cshtml" />
     <Content Include="Views\PET_RECORD\Edit.cshtml" />
     <Content Include="Views\PET_RECORD\Index.cshtml" />
+    <Content Include="Views\RECORD_PACKING\Create.cshtml" />
+    <Content Include="Views\RECORD_PACKING\Delete.cshtml" />
+    <Content Include="Views\RECORD_PACKING\Details.cshtml" />
+    <Content Include="Views\RECORD_PACKING\Edit.cshtml" />
+    <Content Include="Views\RECORD_PACKING\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

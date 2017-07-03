@@ -1,0 +1,26 @@
+﻿@model DSED06_Aquatic_Pet_Store.Models.RECORD_PACKING
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RECORD_PACKING</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PET_RECORD.CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PET_RECORD.CODE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

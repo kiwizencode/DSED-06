@@ -102,8 +102,6 @@
   <EntityType Name="RECORD_PACKING">
     <Key>
       <PropertyRef Name="RECORD_FK" />
-      <PropertyRef Name="BAG" />
-      <PropertyRef Name="BOX" />
     </Key>
     <Property Name="RECORD_FK" Type="Int32" Nullable="false" />
     <Property Name="BAG" Type="Int32" Nullable="false" />
@@ -112,7 +110,7 @@
   </EntityType>
   <Association Name="FK_RECORD_PACKING_PET_RECORD">
     <End Type="AQUATIC_PET_STORE_Model.PET_RECORD" Role="PET_RECORD" Multiplicity="1" />
-    <End Type="AQUATIC_PET_STORE_Model.RECORD_PACKING" Role="RECORD_PACKING" Multiplicity="*" />
+    <End Type="AQUATIC_PET_STORE_Model.RECORD_PACKING" Role="RECORD_PACKING" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="PET_RECORD">
         <PropertyRef Name="ID_PK" />

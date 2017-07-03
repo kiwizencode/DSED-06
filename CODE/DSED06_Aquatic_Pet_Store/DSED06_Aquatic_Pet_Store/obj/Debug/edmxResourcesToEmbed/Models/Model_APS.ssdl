@@ -33,13 +33,9 @@
     <Property Name="ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="15" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="RECORD_PACKING">
     <Key>
       <PropertyRef Name="RECORD_FK" />
-      <PropertyRef Name="BAG" />
-      <PropertyRef Name="BOX" />
     </Key>
     <Property Name="RECORD_FK" Type="int" Nullable="false" />
     <Property Name="BAG" Type="int" Nullable="false" />
@@ -83,7 +79,7 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
   </Association>
   <Association Name="FK_RECORD_PACKING_PET_RECORD">
     <End Role="PET_RECORD" Type="Self.PET_RECORD" Multiplicity="1" />
-    <End Role="RECORD_PACKING" Type="Self.RECORD_PACKING" Multiplicity="*" />
+    <End Role="RECORD_PACKING" Type="Self.RECORD_PACKING" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="PET_RECORD">
         <PropertyRef Name="ID_PK" />
@@ -98,13 +94,7 @@ warning 6002: The table/view 'AQUATIC_PET_STORE.dbo.RECORD_PACKING' does not hav
     <EntitySet Name="PET_INFO" EntityType="Self.PET_INFO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PET_RECORD" EntityType="Self.PET_RECORD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PET_SIZE" EntityType="Self.PET_SIZE" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RECORD_PACKING" EntityType="Self.RECORD_PACKING" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [RECORD_PACKING].[RECORD_FK] AS [RECORD_FK], 
-    [RECORD_PACKING].[BAG] AS [BAG], 
-    [RECORD_PACKING].[BOX] AS [BOX]
-    FROM [dbo].[RECORD_PACKING] AS [RECORD_PACKING]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="RECORD_PACKING" EntityType="Self.RECORD_PACKING" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_PET_INFO_PET_GROUP" Association="Self.FK_PET_INFO_PET_GROUP">
       <End Role="PET_GROUP" EntitySet="PET_GROUP" />
       <End Role="PET_INFO" EntitySet="PET_INFO" />
