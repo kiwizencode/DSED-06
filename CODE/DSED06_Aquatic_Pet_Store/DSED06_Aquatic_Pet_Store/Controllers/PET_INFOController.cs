@@ -39,7 +39,7 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
         // GET: PET_INFO/Create
         public ActionResult Create()
         {
-            ViewBag.GROUP_FK = new SelectList(db.PET_GROUP, "ID_PK", "NAME");
+            ViewBag.GROUP_FK = new SelectList(db.PET_GROUP, "ID_PK", "NAME").OrderBy(x => x.Text);
             return View();
         }
 
@@ -73,7 +73,7 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.GROUP_FK = new SelectList(db.PET_GROUP, "ID_PK", "NAME", pET_INFO.GROUP_FK);
+            ViewBag.GROUP_FK = new SelectList(db.PET_GROUP, "ID_PK", "NAME", pET_INFO.GROUP_FK).OrderBy(x => x.Text);
             return View(pET_INFO);
         }
 
