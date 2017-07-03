@@ -59,7 +59,7 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PET_FK = new SelectList(db.PET_INFO, "ID_PK", "COMMON", pET_RECORD.PET_FK).OrderBy(x => x.Text);
+            ViewBag.PET_FK = new SelectList(db.PET_INFO, "ID_PK", "COMMON", pET_RECORD.PET_FK);
             ViewBag.SIZE_FK = new SelectList(db.PET_SIZE, "ID_PK", "DESCRIPTION", pET_RECORD.SIZE_FK);
             return View(pET_RECORD);
         }
@@ -76,8 +76,9 @@ namespace DSED06_Aquatic_Pet_Store.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PET_FK = new SelectList(db.PET_INFO, "ID_PK", "COMMON", pET_RECORD.PET_FK);
-            ViewBag.SIZE_FK = new SelectList(db.PET_SIZE, "ID_PK", "DESCRIPTION", pET_RECORD.SIZE_FK);
+            ViewBag.PET_FK = new SelectList(db.PET_INFO, "ID_PK", "COMMON", pET_RECORD.PET_FK).OrderBy(x => x.Text);
+            ViewBag.SIZE_FK = new SelectList(db.PET_SIZE, "ID_PK", "DESCRIPTION", pET_RECORD.SIZE_FK).
+                                            OrderBy(x => x.Text, new DSED06_Aquatic_Pet_Store.Code_Common.PetSizeComparer());
             return View(pET_RECORD);
         }
 
